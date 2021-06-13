@@ -58,10 +58,15 @@ logOut(){
 getToken(){//Obtenemos el token que despues enviara el interceptor x cada req
 	return localStorage.getItem('token');
 }
-listarMaterias(dni:any){
+listarMateriasAprobadas(dni:any){
 	console.log(dni);
 	console.log(dni);
 	return this.http.get(`${this.API_URI}/listMaterias/${dni}`);
 }
 
+listarMateriasCorrelativas(dni:any){
+	console.log(dni);
+	console.log(dni);
+	return this.http.get(`${this.API_URI}/listMateriasCorre/${dni}`);
+}
 }

@@ -13,10 +13,11 @@ export class AlumnoListarAprobComponent implements OnInit {
   materias:any = [];
   ngOnInit(): void {
 
-    this.usuariosService.listarMaterias(localStorage.dni).subscribe(
+    this.usuariosService.listarMateriasAprobadas(localStorage.dni).subscribe(
 			res => { 
-        this.materias = res; 
-        console.log(res)
+        console.log('ACA RECIBO');
+        console.log(res);
+        this.materias = res;
       },
       err => {
         console.log(err.error.message);

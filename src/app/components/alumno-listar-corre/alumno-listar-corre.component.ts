@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-alumno-listar-corre',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlumnoListarCorreComponent implements OnInit {
 
-  constructor() { }
+  materias:any = [];
+  constructor(private usuariosService:UsuariosService) { }
 
   ngOnInit(): void {
+    this.usuariosService.listarMateriasCorrelativas(localStorage.dni).subscribe(
+			res => { 
+        console.log('ACA RECIBO');
+        console.log(res);
+        this.materias = res;
+      },
+      err => {
+        console.log(err.error.message);
+
+        
+      }
+		)
+
   }
 
 }
