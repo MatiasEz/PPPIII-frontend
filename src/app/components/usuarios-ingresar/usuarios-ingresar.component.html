@@ -1,27 +1,66 @@
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h3>SignIn</h3>
-                </div>                                
-                <div *ngIf="!reintentar" class="card-body">                                                                            
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- Include the above in your HEAD tag -->
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class="main">
+
+
+    <div class="container">
+        <div class="middle">
+            <div id="login">
+                <div *ngIf="!reintentar" class="card-body">
                     <form (submit)="ingresar()">
-                        <div class="form-group">
-                            <input type="text" name="usuario" [(ngModel)]="user.usuario" placeholder="Usuario" class="form-control" autofocus>
-                            <input type="password" name="password" [(ngModel)]="user.password" placeholder="Contraseña" class="form-control">                            
-                            <button type="submit" class="btn btn-success btn-block">Enviar</button>                           
-                        </div>
+
+                        <fieldset class="clearfix">
+
+                            <p><span class="fa fa-user"></span>
+                                <input type="text" name="usuario" [(ngModel)]="user.usuario" placeholder="username"
+                                    autofocus required>
+                            </p>
+                            <!-- JS because of IE support; better: placeholder="Username" -->
+                            <p><span class="fa fa-lock"></span>
+                                <input type="password" name="password" [(ngModel)]="user.password"
+                                    placeholder="password" required>
+                            </p>
+                            <!-- JS because of IE support; better: placeholder="Password" -->
+
+                            <div>
+                                <span style="width:48%; text-align:left;  display: inline-block;"><a class="small-text"
+                                        href="#">Forgot
+                                        password?</a></span>
+                                <span style="width:50%; text-align:right;  display: inline-block;">
+                                    <button type="submit" class="btn btn-dark">Enviar</button>
+                                </span>
+                            </div>
+
+                        </fieldset>
+                        <div class="clearfix"></div>
+
                     </form>
                 </div>
-                    <div *ngIf="reintentar" class="card-body">
-                        {{mensaje}} <br>
-                        <a class="btn btn-info" (click)=recargarForm()>Reintentar</a> 
-                         <a class="btn btn-danger" routerLink="../principal">Cancelar</a>
-                    </div>                                    
-            </div>
+
+                <div *ngIf="reintentar" class="card-body">
+                    {{mensaje}} <br>
+                    <a class="btn btn-info" (click)=recargarForm()>Reintentar</a>
+                    <a class="btn btn-danger" routerLink="../principal">Cancelar</a>
+                </div>
+
+            <div class="clearfix"></div>
+
+        </div> <!-- end login -->
+        <div class="logo">IFTS11 logo
+
+            <div class="clearfix"></div>
         </div>
+
     </div>
 </div>
 
-<div>{{user.usuario}} {{user.password}}</div>
+</div>

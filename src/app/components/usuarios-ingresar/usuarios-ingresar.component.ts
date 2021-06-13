@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from '../../services/usuarios.service';
 import {Router} from '@angular/router'
 
+// LINK CODE HTML: https://bootsnipp.com/snippets/PDPDr
 
 @Component({
   selector: 'app-usuarios-ingresar',
