@@ -5,14 +5,16 @@ import {UsuariosIngresarComponent} from "./components/usuarios-ingresar/usuarios
 import {UsuariosRegistrarComponent} from "./components/usuarios-registrar/usuarios-registrar.component"
 import { UsuariosPrincipalComponent } from "./components/usuarios-principal/usuarios-principal.component";
 import { AlumnoListarAprobComponent } from "./components/alumno-listar-aprob/alumno-listar-aprob.component";
+import { AlumnoListarCorreComponent } from "./components/alumno-listar-corre/alumno-listar-corre.component";
 import { UsuariosHomeComponent } from "./components/usuarios-home/usuarios-home.component";
 import {AuthGuard} from './auth.guard';
 
 
+
 const routes: Routes = [
-	{
+	{	
 		path: '',
-		redirectTo: 'usuarios/principal',
+		redirectTo: 'usuarios/ingresar',
 		pathMatch: 'full'
 	},
 	{
@@ -40,8 +42,11 @@ const routes: Routes = [
 	{
 		path:'usuarios/listMaterias',
 		component: AlumnoListarAprobComponent,
+	},
+	{
+		path:'usuarios/listCorre',
+		component: AlumnoListarCorreComponent,
 	}
-	
 ];
 
 @NgModule({

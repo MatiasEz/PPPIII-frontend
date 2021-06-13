@@ -13,7 +13,7 @@ export class AlumnoListarAprobComponent implements OnInit {
   materias:any = [];
   ngOnInit(): void {
 
-    this.usuariosService.listarMaterias().subscribe(
+    this.usuariosService.listarMaterias(localStorage.dni).subscribe(
 			res => { 
         this.materias = res; 
         console.log(res)

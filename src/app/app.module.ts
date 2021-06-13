@@ -14,6 +14,7 @@ import { UsuariosHomeComponent } from './components/usuarios-home/usuarios-home.
 import {AuthGuard} from './auth.guard';
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import { AlumnoListarAprobComponent } from './components/alumno-listar-aprob/alumno-listar-aprob.component';
+import { AlumnoListarCorreComponent } from './components/alumno-listar-corre/alumno-listar-corre.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AlumnoListarAprobComponent } from './components/alumno-listar-aprob/alu
     UsuariosListarComponent,
     UsuariosPrincipalComponent,
     UsuariosHomeComponent,
-    AlumnoListarAprobComponent
+    AlumnoListarAprobComponent,
+    AlumnoListarCorreComponent
   ],
   imports: [
     BrowserModule,
